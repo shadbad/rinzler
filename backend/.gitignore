@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules/
+
+# Ignore built ts files
+build/
+
+# Logs
+logs/
