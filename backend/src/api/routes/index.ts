@@ -1,6 +1,6 @@
 import type express from 'express';
 import { type Request, type Response } from 'express';
-import { userRouter } from '../../app';
+import { userRouter } from '../../app/users';
 
 export const configureRoutes = (app: express.Application): void => {
   app.get('/', (req: Request, res: Response) => {

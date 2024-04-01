@@ -1,5 +1,6 @@
 import { DataSource } from 'typeorm';
 import { logger } from '../utils';
+import { seed } from './seed';
 
 export const getAppDataSource = (() => {
   let AppDataSource: DataSource | null = null;
@@ -49,6 +50,8 @@ export const initialize = async (): Promise<void> => {
     await dataSource.initialize();
     logger.info('App data source has been initialized!');
     await migrate(dataSource);
+    logger.info('Seeding...');
+    await seed();
   } catch (error) {
     logger.error('Error during app data source initialization:', error);
   }
