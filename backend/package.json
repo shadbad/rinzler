@@ -10,7 +10,11 @@
     "lint:check": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "format:check": "prettier . --check",
-    "format:fix": "prettier . --write"
+    "format:fix": "prettier . --write",
+    "db:start": "docker-compose up -d",
+    "db:migration:up": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/data",
+    "db:migration:down": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/data",
+    "db:migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./src/data ./src/data/migrations/migration -p"
   },
   "author": "Sina Akbari Shadbad",
   "license": "ISC",
@@ -20,6 +24,9 @@
     "express": "^4.19.2",
     "helmet": "^7.1.0",
     "morgan": "^1.10.0",
+    "mysql2": "^3.9.3",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20",
     "winston": "^3.13.0"
   },
   "devDependencies": {

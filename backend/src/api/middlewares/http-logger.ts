@@ -1,5 +1,5 @@
 import morgan from 'morgan';
-import { logger } from '../util';
+import { logger } from '../../utils';
 
 export const httpLogger = morgan(
   '[:method] :url status(:status) :response-time ms',

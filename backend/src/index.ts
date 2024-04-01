@@ -1,6 +1,13 @@
-import { loadEnvironmentVariables } from './util';
-import { start as startServer } from './server';
+import { loadEnvironmentVariables, logger } from './utils';
+import { start as initializeServer } from './api';
+import { initialize as initializeDB } from './data';
 
 loadEnvironmentVariables();
 
-startServer();
+initializeDB()
+  .then(() => {
+    initializeServer();
+  })
+  .catch((error) => {
+    logger.error('Error during application bootstrap:', error);
+  });

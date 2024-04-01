@@ -1,5 +1,5 @@
 import express from 'express';
-import { logger } from './util';
+import { logger } from '../utils';
 import { configureMiddlewares } from './middlewares';
 import { configureRoutes } from './routes';
 

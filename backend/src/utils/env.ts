@@ -17,6 +17,8 @@ export const loadEnvironmentVariables = (): void => {
     dotenv.config({
       path: `.env${currentEnvironment === 'local' ? '' : '.' + currentEnvironment}`,
     });
+
+    logger.info(`Environment variables loaded successfully!`);
   } catch (error) {
     logger.error('Error loading environment variables:', error);
   }
