@@ -2,6 +2,28 @@ import { DataSource } from 'typeorm';
 import { logger } from '../utils';
 import { seed } from './seed';
 
+// #region DataSource for the migration command
+
+//! Don't use this in code, it's only for the migration command
+//! Use the getAppDataSource function instead
+//! when you're done with the migration comment this out
+
+// export const AppDataSource = new DataSource({
+//   type: 'mysql',
+//   host: 'localhost',
+//   port: 3306,
+//   username: 'mysql',
+//   password: 'user123',
+//   database: 'rinzler',
+//   entities: ['src/app/**/*.model.ts'],
+//   migrations: ['src/data/migrations/**/*.ts'],
+//   logging: true,
+//   logger: 'simple-console',
+//   synchronize: false,
+// });
+
+// #endregion
+
 export const getAppDataSource = (() => {
   let AppDataSource: DataSource | null = null;
 
