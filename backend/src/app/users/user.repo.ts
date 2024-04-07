@@ -1,7 +1,7 @@
 import { type FindManyOptions, type Repository } from 'typeorm';
 import { getAppDataSource } from '../../data';
-import { User } from './user.model';
 import { logger, hash } from '../../utils';
+import { User } from './';
 
 class UserRepository {
   constructor() {

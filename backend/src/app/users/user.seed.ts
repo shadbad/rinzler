@@ -1,5 +1,5 @@
 import { type DataSource } from 'typeorm';
-import { getUserRepository } from './user.repo';
+import { getUserRepository } from './';
 import { logger } from '../../utils';
 
 export const seed = async (dataSource: DataSource): Promise<void> => {
